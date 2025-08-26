@@ -1,42 +1,104 @@
-# The Go Programming Language
+# BRGo: Compilador Go com Palavras-Chave em Português
 
-Go is an open source programming language that makes it easy to build simple,
-reliable, and efficient software.
+BRGo é um wrapper para Go que permite escrever código usando palavras-chave em português do Brasil, facilitando o aprendizado da linguagem para programadores brasileiros.
 
-![Gopher image](https://golang.org/doc/gopher/fiveyears.jpg)
-*Gopher image by [Renee French][rf], licensed under [Creative Commons 4.0 Attribution license][cc4-by].*
+## Funcionalidades
 
-Our canonical Git repository is located at https://go.googlesource.com/go.
-There is a mirror of the repository at https://github.com/golang/go.
+- Traduz automaticamente palavras-chave em português para Go padrão
+- Suporta todas as funcionalidades do Go
+- Mantém a mesma performance e características do Go original
+- Simples de usar, com comandos semelhantes ao Go
 
-Unless otherwise noted, the Go source files are distributed under the
-BSD-style license found in the LICENSE file.
+## Exemplos de Tradução
 
-### Download and Install
+| Português (BRGo) | Go Original |
+|------------------|------------|
+| se               | if         |
+| senao            | else       |
+| para             | for        |
+| escolhe          | switch     |
+| caso             | case       |
+| estrutura        | struct     |
+| interface        | interface  |
+| pacote           | package    |
+| importa          | import     |
+| func             | func       |
+| retorna          | return     |
+| principal        | main       |
 
-#### Binary Distributions
+## Requisitos
 
-Official binary distributions are available at https://go.dev/dl/.
+- Go 1.16 ou superior instalado no sistema
+- Variáveis de ambiente Go configuradas corretamente
 
-After downloading a binary release, visit https://go.dev/doc/install
-for installation instructions.
+## Instalação
 
-#### Install From Source
+```bash
+# Clone este repositório
+git clone https://github.com/seunome/brgo.git
 
-If a binary distribution is not available for your combination of
-operating system and architecture, visit
-https://go.dev/doc/install/source
-for source installation instructions.
+# Entre no diretório
+cd brgo/traducao
 
-### Contributing
+# Compile o projeto
+go build -o brgo .
 
-Go is the work of thousands of contributors. We appreciate your help!
+# Mova para um diretório no seu PATH (opcional)
+# Por exemplo:
+# mv brgo /usr/local/bin/
+```
 
-To contribute, please read the contribution guidelines at https://go.dev/doc/contribute.
+## Uso
 
-Note that the Go project uses the issue tracker for bug reports and
-proposals only. See https://go.dev/wiki/Questions for a list of
-places to ask questions about the Go language.
+### Compilar um programa:
 
-[rf]: https://reneefrench.blogspot.com/
-[cc4-by]: https://creativecommons.org/licenses/by/4.0/
+```bash
+brgo -build arquivo.brgo
+```
+
+### Executar um programa:
+
+```bash
+brgo -run arquivo.brgo
+```
+
+### Compilar e executar (padrão):
+
+```bash
+brgo arquivo.brgo
+```
+
+### Especificar o arquivo de saída:
+
+```bash
+brgo -build -o meuprograma arquivo.brgo
+```
+
+## Estrutura do Projeto
+
+- `main.go` - Ponto de entrada do compilador BRGo
+- `mapeamento.go` - Dicionário de mapeamento de palavras-chave
+- `preprocessador.go` - Implementação do pré-processador
+- `exemplos/` - Exemplos de programas em BRGo
+
+## Como Funciona
+
+O BRGo funciona como um pré-processador que traduz código escrito com palavras-chave em português para código Go padrão:
+
+1. Lê o arquivo `.brgo` com código em português
+2. Substitui as palavras-chave em português por suas equivalentes em Go
+3. Gera um arquivo Go temporário
+4. Chama o compilador Go padrão para compilar o código
+5. Opcionalmente executa o programa compilado
+
+## Contribuindo
+
+Contribuições são bem-vindas! Você pode ajudar a:
+
+1. Adicionar mais palavras-chave ao mapeamento
+2. Melhorar o pré-processador
+3. Criar exemplos e documentação
+
+## Licença
+
+Este projeto está licenciado sob a mesma licença do Go.
