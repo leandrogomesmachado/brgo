@@ -35,7 +35,7 @@ BRGo é um wrapper para Go que permite escrever código usando palavras-chave em
 
 ```bash
 # Clone este repositório
-git clone https://github.com/seunome/brgo.git
+git clone https://github.com/leandrogomesmachado/brgo.git
 
 # Entre no diretório
 cd brgo/traducao
