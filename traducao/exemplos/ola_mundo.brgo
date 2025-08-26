@@ -1,0 +1,32 @@
+pacote principal
+
+importa "fmt"
+
+func principal() {
+    fmt.Println("Olá, Mundo do BRGo!")
+    
+    // Um exemplo de if/else
+    x := 10
+    
+    se x > 5 {
+        fmt.Println("x é maior que 5")
+    } senao {
+        fmt.Println("x é menor ou igual a 5")
+    }
+    
+    // Um exemplo de loop for
+    para i := 0; i < 3; i++ {
+        fmt.Println("Contando:", i)
+    }
+    
+    // Um exemplo de switch
+    cor := "azul"
+    escolhe cor {
+    caso "vermelho":
+        fmt.Println("A cor é vermelha")
+    caso "azul":
+        fmt.Println("A cor é azul")
+    padrao:
+        fmt.Println("Cor desconhecida")
+    }
+}
