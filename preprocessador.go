@@ -57,14 +57,11 @@ func (p *Preprocessador) Processar(entrada io.Reader, saida io.Writer) error {
     // Expressão para identificar a declaração de pacote
     rePacote := regexp.MustCompile(`^pacote\s+([a-zA-Z][a-zA-Z0-9_]*)`)
 
-    var pacoteNome string
-
     for scanner.Scan() {
         linha := scanner.Text()
 
         // Identificar o nome do pacote
         if matches := rePacote.FindStringSubmatch(linha); len(matches) > 1 {
-            pacoteNome = matches[1]
             linha = strings.Replace(linha, "pacote", "package", 1)
         }
         

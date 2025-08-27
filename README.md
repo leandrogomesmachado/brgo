@@ -91,6 +91,36 @@ O BRGo funciona como um pré-processador que traduz código escrito com palavras
 4. Chama o compilador Go padrão para compilar o código
 5. Opcionalmente executa o programa compilado
 
+## Como Iniciar um Projeto com BRGo
+
+Siga os passos abaixo para criar, organizar e compilar um projeto usando o transpiler BRGo.
+
+### 1. Estruture Seu Projeto
+
+Crie um diretório para seu projeto com arquivos `.brgo`. Cada arquivo deve declarar um `pacote` (equivalente ao `package` do Go). Por exemplo:
+
+**meu_projeto/main.brgo**:
+
+```go
+pacote principal
+importa "github.com/usuario/repo"
+
+func principal() {
+    imprime("Olá, mundo!")
+}
+
+**meu_projeto/utils/utils.brgo:
+
+```
+pacote utils
+
+func auxiliar() {
+    imprime("Função auxiliar")
+}
+
+Nota: Use a palavra-chave pacote para definir o nome do pacote no início de cada arquivo .brgo. Arquivos no mesmo diretório devem declarar o mesmo nome de pacote.
+
+
 ## Contribuindo
 
 Contribuições são bem-vindas! Você pode ajudar a:
